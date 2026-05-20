@@ -1,69 +1,36 @@
 "use strict";
 
+//Tip Calculator LOGIC
+const billValue = document.querySelector(".bill");
+let totalBill = document.querySelector(".bill-total");
+const billPerPerson = document.querySelector(".per-person");
+const tipValue = document.querySelector(".selected");
+const tipInside = document.querySelector(".tip-inside");
+const tipSum = document.querySelector(".tip-sum");
+const chooseBtn = document.querySelector(".tip-value");
 
+//Add bill to Tip
+billValue.addEventListener("input", function () {
+  let billSum = Number(billValue.value);
+  totalBill.textContent = `${billSum.toFixed(2)} eur`;
+  billPerPerson.textContent = `${billSum.toFixed(2) / 1} eur`;
+});
 
+// Select Button
 
+//Select Logic
+tipValue.addEventListener("click", function () {
+  const containsSelectedClass = (tipInside.textContent = `${tipValue.value}%`);
+  let billSum = Number(billValue.value);
+  const tip = Number(tipValue.value);
+  const totalTip = billSum * (tip / 100);
+  tipSum.textContent = `${totalTip.toFixed(2)} eur`;
+  totalBill.textContent = `${(billSum + totalTip).toFixed(2)} eur`;
+  billPerPerson.textContent = `${(billSum + totalTip).toFixed(2) / 1} eur`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-// const bill = document.querySelector("#bill");
-// const result = document.querySelector(".tip-bold"); 
-// const buttons = document.querySelectorAll('.tip-percent');
-
-// 
-// function getSelectedTipPercent() {
-//     const selectedButton = document.querySelector('.tip-percent.selected');
-//     if (selectedButton) {
-//         return Number(selectedButton.value); 
-//     }
-//     return 0;
-// }
-
-// function tipCalc(billValue, percentValue) {
-//     return billValue * (percentValue / 100);
-// }
-
-//
-// function updateUI() {
-//     const billValue = Number(bill.value);
-//     const percentValue = getSelectedTipPercent();
-//     const finalTip = tipCalc(billValue, percentValue);
-    
-// 
-//     result.textContent = `${finalTip.toFixed(2)} eur`;
-// }
-
-//
-// bill.addEventListener("input", () => {
-//     updateUI(); 
-// });
-
-// buttons.forEach(button => {
-//     button.addEventListener('click', function(e) {
-//         e.preventDefault(); // Спира презареждането на формата
-        
-//         const currentSelected = document.querySelector('.selected');
-//         if (currentSelected) {
-//             currentSelected.classList.remove('selected');
-//         }
-
-//         this.classList.add('selected');
-
-// 
-//         updateUI(); 
-//     });
-// });
+  if (containsSelectedClass) {
+    tipValue.classList.remove("selected");
+  } else {
+    tipValue.classList.add("selected");
+  }
+});
