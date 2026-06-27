@@ -117,3 +117,72 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+
+@media all and (max-width: 970px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+
+  body {
+    padding: 30px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 110px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  h1 {
+    position: relative;
+    padding-top: 150px;
+  }
+
+  .number {
+    position: relative;
+    margin-right: auto;
+    margin-bottom: 270px;
+  }
+
+  .between {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .again {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  width: 100%;
+  font-size: 2rem;
+}
+}
