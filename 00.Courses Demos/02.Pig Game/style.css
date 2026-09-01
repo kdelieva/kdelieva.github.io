@@ -212,4 +212,9 @@ main {
     display: flex;
     top: 57%;
   }
+
+  .dice {
+    margin-top: 30px;
+    margin-left: -100px;
+  }
 }
